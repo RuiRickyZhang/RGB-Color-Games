@@ -10,7 +10,7 @@ var colors = [
 var squares = document.querySelectorAll(".square");
 var pickedColor = colors[4]
 var colorDisplay = document.getElementById("colorDisplay");
-
+var messageDisplay = document.querySelectorAll("#message") ;
 colorDisplay.textContent = pickedColor;
 
 for(var i = 0; i < squares.length; i++){
@@ -20,9 +20,10 @@ for(var i = 0; i < squares.length; i++){
 		var clickedColor = this.style.backgroundColor;
 
 		if(clickedColor === pickedColor){
-			alert("Correct!");
+			messageDisplay.textContent = "Correct!";
 		} else {
-			alert("WRONG!!!");
+			this.style.backgroundColor = "#232323";
+			messageDisplay.textContent = "Try Again";
 		}
 	})
 }
